@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Original Author: GekkoP (Adapted for oksh)
+# Source: http://linuxbbq.org/bbs/viewtopic.php?f=4&t=1656#p33189
+
+for j in 3 4; do
+  i=0
+  while [ $i -le 7 ]; do
+    if [ "$j" = "3" ]; then
+      # Swapped \e for \033 for shell compatibility
+      eval "f$i=\$(printf '\033['${j}${i}'m')"
+    else
+      eval "b$i=\$(printf '\033['${j}${i}'m')"
+    fi
+    i=$((i + 1))
+  done
+done
+
+d=$(printf '\033[1m')
+t=$(printf '\033[0m')
+v=$(printf '\033[7m')
+
+cat << EOF
+
+ $f1███$d▄$t  $f2███$d▄$t  $f3███$d▄$t  $f4███$d▄$t  $f5███$d▄$t  $f6███$d▄$t  $f7███$d▄$t
+ $f1███$d█$t  $f2███$d█$t  $f3███$d█$t  $f4███$d█$t  $f5███$d█$t  $f6███$d█$t  $f7███$d█$t
+ $f1███$d█$t  $f2███$d█$t  $f3███$d█$t  $f4███$d█$t  $f5███$d█$t  $f6███$d█$t  $f7███$d█$t
+ $d$f1 ▀▀▀   $f2▀▀▀   $f3▀▀▀   $f4▀▀▀   $f5▀▀▀   $f6▀▀▀   $f7▀▀▀
+EOF
