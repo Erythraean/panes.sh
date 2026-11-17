@@ -7,7 +7,6 @@ for j in 3 4; do
   i=0
   while [ $i -le 7 ]; do
     if [ "$j" = "3" ]; then
-      # Swapped \e for \033 for shell compatibility
       eval "f$i=\$(printf '\033['${j}${i}'m')"
     else
       eval "b$i=\$(printf '\033['${j}${i}'m')"
