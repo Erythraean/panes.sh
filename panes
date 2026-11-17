@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Original Author: GekkoP (Adapted for oksh)
+# Original Author: GekkoP
 # Source: http://linuxbbq.org/bbs/viewtopic.php?f=4&t=1656#p33189
 
 for j in 3 4; do
